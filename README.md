@@ -26,13 +26,29 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+
+The game is a number guessing game where the player picks a difficulty and tries to guess 
+a secret number within a limited number of attempts, getting hints after each guess.
+
 - [ ] Detail which bugs you found.
+
+Bugs found:
+1. Hint messages were completely backwards, too high said go higher and too low said go lower.
+2. The attempt counter started at 1 instead of 0 making the attempts left display always wrong.
+3. Clicking New Game did not reset score, status, or history so old game data carried over.
+
 - [ ] Explain what fixes you applied.
+
+Fixes applied:
+1. Swapped the return values in check_guess so hints now correctly tell the player which direction to guess.
+2. Changed the attempts initialization from 1 to 0 so the counter is accurate from the start.
+3. Added score, status, and history resets to the New Game handler.
+4. Moved all core logic functions into logic_utils.py and updated app.py to import from there.
 
 ## 📸 Demo
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
-
+![alt text](image.png)
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
